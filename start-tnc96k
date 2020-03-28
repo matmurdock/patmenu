@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#script to start Pat for TNC96k Raspberry Pi Hat
+#20200328 km4ack
+
+clear
+
+source $HOME/patmenu/config
+
+PIDKISS=$(pidof kissattach)
+
+if [ -z "$PIDKISS" ]
+then
+echo "Kissattach Not Running"
+else
+echo "Kissattach Running. Stopping."
+sudo killall kissattach > /dev/null 2>&1
+fi
+
+sleep 1
+
+sudo kissattach $TNCPort $AXP  10.1.1.1
+
+#open pat inbox in browser
+export DISPLAY=:0 && chromium-browser --app=http://127.0.0.1:$PORT > /dev/null 2>&1 &
+
+#exit 0
