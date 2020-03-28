@@ -25,6 +25,9 @@ DIREWOLF="direwolf -p"
 #Kiss attach command
 KISS="sudo /usr/sbin/kissattach /tmp/kisstnc"
 
+#TNC96k Serial Port
+TNCPort="/dev/ttyS0"
+
 #axport name for kissattach
 AXP=wl2k
 
