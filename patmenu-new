@@ -89,7 +89,7 @@ MAINMENU () {
 clear;echo;echo;echo
 echo "Pat Menu v"$VER" by KM4ACK"
 echo
-options=("Manage Pat" "Start ARDOP" "Start Packet" "Find Ardop" "Pat Auto Connect" "Pat Catalog" "Stop Modems" "Manage Pat Menu" "Exit")
+options=("Manage Pat" "Start ARDOP" "Start Packet" "Start TNC96k" "Find Ardop" "Pat Auto Connect" "Pat Catalog" "Stop Modems" "Manage Pat Menu" "Exit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -105,6 +105,10 @@ do
             $HOME/patmenu/start-pat2m
 	    MAINMENU
             ;;
+	"Start TNC96k")
+            $HOME/patmenu/start-tnc96k
+	    MAINMENU
+            ;;	    
        "Find Ardop")
             FINDARDOP
             ;;
